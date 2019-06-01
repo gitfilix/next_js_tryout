@@ -1,0 +1,19 @@
+.headercustom {
+
+    p {
+        color: #A33;
+
+    }
+
+
+    a {
+        padding: 10px;
+        font-family: monospace;
+        color: #999;
+        background: #f3f3f3;
+        text-decoration: none;
+        &:hover {
+            color: #B33;
+        }
+    }
+}
