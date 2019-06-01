@@ -5,19 +5,15 @@ import BaseLayout from '../components/layouts/BaseLayout';
 
 // class based component
 class indexPage extends Component {
-    // special (async) Lifecycle hook: get initial props
-    // static appName Component: define with getInitialProps
-    static getInitialProps(context) {
-        // logs out in terminal:
-        console.log("context of getInitialProps:",context);
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve({ appName: "Super App Property with promise" });
-            }, 1000);
-        });
-    return promise;
-}
 
+    constructor() {
+        super();
+
+        this.state = {
+            title: 'I am indexpage state'
+        }
+        console.log('constructor');
+    }
 
     //retrun jsx
     render () {
@@ -26,6 +22,8 @@ class indexPage extends Component {
                 <h1>Main index page of {this.props.appName}</h1>
                 <p>Lorem Ipsum... </p>
                 <p>Go to <Link href='/auth'><a>Auth</a></Link></p>
+                <h5>{this.state.title}</h5>
+                <button onClick={ ()=> {this.setState({title: ' I am updated page state'})}}> ChangeMe </button>
             </BaseLayout>
         );
     }
