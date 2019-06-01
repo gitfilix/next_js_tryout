@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import Header from '../components/shared/Header';
+// import Header from '../components/shared/Header';
+import BaseLayout from '../components/layouts/BaseLayout';
+
 // class based component
 class indexPage extends Component {
     // special (async) Lifecycle hook: get initial props
@@ -20,12 +22,11 @@ class indexPage extends Component {
     //retrun jsx
     render () {
         return (
-            <div>
-                <Header />
+            <BaseLayout>
                 <h1>Main index page of {this.props.appName}</h1>
                 <p>Lorem Ipsum... </p>
                 <p>Go to <Link href='/auth'><a>Auth</a></Link></p>
-            </div>
+            </BaseLayout>
         );
     }
 }
