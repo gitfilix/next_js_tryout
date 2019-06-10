@@ -16,8 +16,9 @@ class indexPage extends Component {
         console.log('constructor');
     }
 
-    updateTitle = function() {
-        this.setState({title: "I am updated new updateTitle-title2"});
+    updateTitle = function(data) {
+        console.log("updateTitle");
+        this.setState({title: data});
     }
 
     //retrun jsx
@@ -34,7 +35,7 @@ class indexPage extends Component {
                 <p>Lorem Ipsum... </p>
                 <p>Go to <Link href='/auth'><a>Auth</a></Link></p>
                 <h5>current state: {title}</h5>
-                <button onClick={ ()=> this.updateTitle() }> ChangeStateButton </button>
+                <button onClick={() => this.updateTitle("hi there") }> ChangeStateButton </button>
             </BaseLayout>
         );
     }
