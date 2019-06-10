@@ -16,15 +16,25 @@ class indexPage extends Component {
         console.log('constructor');
     }
 
+    updateTitle = function() {
+        this.setState({title: "I am updated new updateTitle-title2"});
+    }
+
     //retrun jsx
     render () {
+        // debugger;
+        // destruction shortcut title
+        // const title = this.state.title;
+        const {title} = this.state;
+
+
         return (
             <BaseLayout>
                 <h1>Main index page of {this.props.appName}</h1>
                 <p>Lorem Ipsum... </p>
                 <p>Go to <Link href='/auth'><a>Auth</a></Link></p>
-                <h5>{this.state.title}</h5>
-                <button onClick={ ()=> {this.setState({title: ' I am updated page state'})}}> ChangeMe </button>
+                <h5>current state: {title}</h5>
+                <button onClick={ ()=> this.updateTitle() }> ChangeStateButton </button>
             </BaseLayout>
         );
     }
