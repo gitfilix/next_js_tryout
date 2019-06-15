@@ -5,8 +5,10 @@ import Header from '../shared/Header';
 const BaseLayout = (props) => {
     return (
         <React.Fragment>
-            <Header title={'I am a header-component'} />
-            {props.children}
+            <div className="wrapper">
+                <Header title={'I am a header-component'} />
+                {props.children}
+            </div>
         </React.Fragment>
     )
 }
