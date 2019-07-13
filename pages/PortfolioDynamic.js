@@ -7,12 +7,11 @@ import { withRouter } from 'next/router';
 class PortfolioDynamic extends React.Component {
 
     render () {
-        console.log(this.props);
         return (
             <BaseLayout>
-            <h1>Query param:{this.props.router.query.title}</h1>
+            <h1>Query param:{this.props.router.query.id}</h1>
                 <h2>I am a PortfolioDynamic page</h2>
-                <p>no plan whats going on here.... </p>
+                <p>url should be dynamic </p>
                 <p>for now!</p>
             </BaseLayout>
         )

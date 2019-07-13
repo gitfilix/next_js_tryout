@@ -13,8 +13,6 @@ class Portfolios extends React.Component {
             } catch(err) {
                 console.error(err)
             }
-
-
         return {posts: posts.splice(0, 10)};
     }
 
@@ -22,7 +20,7 @@ class Portfolios extends React.Component {
     renderPosts(posts) {
         return posts.map((post) => {
             return (
-                <Link as={`/portfolioDynamicLink/${post.id}`} href={`/PortfolioDynamic?title=${post.title}` } >
+                <Link as={`/portfolioDynamicLink/${post.id}`} href={`/PortfolioDynamic?id=${post.id}` } >
                     <a> { post.title} </a>
                 </Link>
             )
