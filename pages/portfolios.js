@@ -22,7 +22,7 @@ class Portfolios extends React.Component {
     renderPosts(posts) {
         return posts.map((post) => {
             return (
-                <Link href={`/PortfolioDynamic?title=${post.title}` } >
+                <Link as={`/portfolioDynamicLink/${post.id}`} href={`/PortfolioDynamic?title=${post.title}` } >
                     <a> { post.title} </a>
                 </Link>
             )
@@ -37,7 +37,7 @@ class Portfolios extends React.Component {
             <h1>I am PortfolioS Page</h1>
                 <p>titles from post-feed:</p>
                 <ul>
-                    { this.renderPosts(posts) }
+                    <li>{ this.renderPosts(posts) }</li>
                 </ul>
             </BaseLayout>
         )
