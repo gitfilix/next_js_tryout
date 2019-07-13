@@ -1,5 +1,6 @@
 import React from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
+import Link from 'next/link';
 import axios from 'axios';
 
 class Portfolios extends React.Component {
@@ -17,12 +18,13 @@ class Portfolios extends React.Component {
         return {posts: posts.splice(0, 10)};
     }
 
-    // return rendered posts from feed
+    // return rendered posts from feed and create dynamic links
     renderPosts(posts) {
         return posts.map((post) => {
-            console.log("renderPosts", post);
             return (
-                <li> {post.title} </li>
+                <Link href={`/PortfolioDynamic?title=${post.title}` } >
+                    <a> { post.title} </a>
+                </Link>
             )
         } )
     }
@@ -32,7 +34,7 @@ class Portfolios extends React.Component {
 
         return(
             <BaseLayout>
-            <h1>I am Portfolios Page</h1>
+            <h1>I am PortfolioS Page</h1>
                 <p>titles from post-feed:</p>
                 <ul>
                     { this.renderPosts(posts) }
