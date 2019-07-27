@@ -18,13 +18,15 @@ class Portfolios extends React.Component {
 
     // return rendered posts from feed and create dynamic links
     renderPosts(posts) {
-        return posts.map((post) => {
+        return posts.map((post, index) => {
             return (
-                <Link as={`/portfolioDynamicLink/${post.id}`} href={`/PortfolioDynamic?id=${post.id}` } >
-                    <a> { post.title} </a>
-                </Link>
-            )
-        } )
+                <li key={index}>
+                    <Link as={`/portfolioDynamicLink/${post.id}`} href={`/PortfolioDynamic?id=${post.id}` } >
+                        <a style={{'fontSize' :'20px'}}> { post.title} </a>
+                    </Link>
+                </li>
+                )
+        })
     }
 
     render() {
@@ -35,7 +37,7 @@ class Portfolios extends React.Component {
             <h1>I am PortfolioS Page</h1>
                 <p>titles from post-feed:</p>
                 <ul>
-                    <li>{ this.renderPosts(posts) }</li>
+                    { this.renderPosts(posts) }
                 </ul>
             </BaseLayout>
         )

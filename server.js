@@ -11,7 +11,8 @@ app.prepare()
 
     // special
     server.get('/portfolioDynamicLink/:id', (req, res) => {
-        const actualPage = 'portfolio'
+        const actualPage = '/portfolio'
+        // query param for id of portfolio in case of refresj
         const queryParams = { id: req.params.id }
         app.render( req, res, actualPage, queryParams)
     })
